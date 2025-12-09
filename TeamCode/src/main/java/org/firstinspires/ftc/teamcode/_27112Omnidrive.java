@@ -22,7 +22,7 @@ fourWheelDrive drive;
         Servo drop = hardwareMap.get(Servo.class, "drop");
         waitForStart();
         if (opModeIsActive()) {
-            // Put run blocks here.
+            // Put run blocks here
 
             while (opModeIsActive()) {
                 drive.Update(telemetry, gamepad1, gamepad2);
@@ -31,8 +31,8 @@ fourWheelDrive drive;
                 } else {
                     drop.setPosition(0);
                 }
-                if (gamepad1.right_trigger >= 0.5) {
-                    spin1.setPower(1);
+                if (gamepad1.right_bumper) {
+                    spin1.setPower(-1);
                 }
                 else {
                     spin1.setPower(0);
